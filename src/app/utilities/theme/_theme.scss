@@ -1,0 +1,10 @@
+$app-color: #3f3fb0;
+$app-bg: #f5f7fa;
+$common-font: 'ProximaNovaRegular', sans-serif;
+$flame-warning: #FF0000 !default;
+$theme-bg: #169b37;
+.mat-raised-button
+{
+  background: $app-color;
+  color: $app-bg;
+}

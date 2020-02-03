@@ -1,0 +1,194 @@
+@import '../../utilities/theme/theme';
+.app-logo-image {
+padding: 2% !important;
+
+}
+.card-body{
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+
+    button{
+        font-family: $common-font; 
+        font-size: 17px;
+    }
+    p {
+        font-size: 16px;
+    }
+    a {
+        text-decoration: none;
+        outline: none;
+        transition: all 0.2s ease;
+        color: $app-color;
+       
+    }
+    .control-label {
+        padding-top: 11px;
+        color: $app-color;
+    }
+    .form-group {
+        margin-bottom: 12px;
+    }
+
+
+.has-input-error {
+    border-color: $flame-warning;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(217, 73, 89, 0.6);
+}
+.has-input-error:focus {
+    border-color: $flame-warning;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(217, 73, 89, 0.6);
+}
+
+
+
+.mat-form-field
+{
+    width:100%;
+    margin-top:5px;
+    
+}
+
+.form-control {
+    color: #9d9d9d;
+    border-radius: 2px;
+    background-color: #ffffff;
+    border: solid 1px #9d9d9d;
+}
+
+.set_width
+{
+    width:400px;
+    margin:0 auto;
+    margin-top: 7%;
+    
+}
+.card
+{
+    box-shadow: 0 17px 40px 0 rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    border: 1px solid #e5e5e5 !important;
+}
+.form_header
+{
+    // color: #009B77;
+    color:#3f3fb0;
+    font-weight: bold;
+    letter-spacing: 0.08em;
+   
+
+}
+.underline {
+    font-size: 10px;
+    border-bottom: 2px solid #b03331;
+    display: block;
+    width: 80px;
+}
+.marginTop
+{
+    margin-top:4%;
+}
+
+
+.custom-button
+{
+    width: 100%;
+    height: 50px;
+    background-color:#3f3fb0;
+    border-color:#3f3fb0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1;
+    letter-spacing: 1px;
+    text-align: center;
+    color: #ffffff;
+
+}
+
+
+
+.forgot_pass
+{
+    float: right;
+    color: #b03331;
+    font-weight: 00;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    font-size:16px;
+  font-weight: bold;
+}
+
+
+.signup_text
+{
+margin-top: 4%;
+letter-spacing: 0.08em;
+font-size: 16px;
+text-align: right;
+}
+
+.backgroundImage{
+    background: url(../../../assets/bg.png);
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+    height: 80vh;
+}
+
+$green: #7ac142;
+$white: white;
+
+
+$curve: cubic-bezier(0.650, 0.000, 0.450, 1.000);
+.checkmark {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    display: block;
+    stroke-width: 2;
+    stroke: $white;
+    stroke-miterlimit: 10;
+    box-shadow: inset 0px 0px 0px $green;
+    animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+  }
+  
+  .checkmark__circle {
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    stroke-width: 2;
+    stroke-miterlimit: 10;
+    stroke: $green;
+    fill: none;
+    animation: stroke .6s $curve forwards;
+  }
+  
+  .checkmark__check {
+    transform-origin: 50% 50%;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    animation: stroke .3s $curve .8s forwards;
+  }
+  
+  @keyframes stroke {
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+  
+  @keyframes scale {
+    0%, 100% {
+      transform: none;
+    }
+    50% {
+      transform: scale3d(1.1, 1.1, 1);
+    }
+  }
+  
+  @keyframes fill {
+    100% {
+      box-shadow: inset 0px 0px 0px 30px $green;
+    }
+  }

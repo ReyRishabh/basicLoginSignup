@@ -1,0 +1,41 @@
+<div class="container-fluid backgroundImage">
+    <div class="set_width">
+        <div align="center">
+            <img class="app-logo-image" src="assets/assignment.jpg">
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h4 class="form_header">Login</h4>
+                <span class="underline"></span>
+                <form class="marginTop" [formGroup]="form" (ngSubmit)="onSubmit(form.value,$event)">
+                    <mat-form-field>
+                        <mat-label>Email</mat-label>
+                        <input matInput formControlName="email" type="email" autocomplete="off">
+                        <button mat-button type="button" matSuffix mat-icon-button aria-label="View" *ngIf="form.controls.email.valid">
+                            <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/><path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/></svg>
+                        </button>
+                        <mat-error *ngIf="form.controls['email'].errors?.invalid && !form.controls['email'].pristine">
+                            Email is not valid
+                        </mat-error>
+                        <mat-error *ngIf="form.controls['email'].errors?.required && !form.controls['email'].pristine">
+                            Email is required
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Password</mat-label>
+                        <input matInput type="password" formControlName="password">
+                        <mat-error
+                            *ngIf=" form.controls['password'].errors?.required && !form.controls['password'].pristine">
+                            Password is required
+                        </mat-error>
+                    </mat-form-field>
+                    <button type="submit" class="custom-button marginTop"
+                        [ngStyle]="{'cursor':form.valid ? 'pointer': 'not-allowed'}" [disabled]="!form.valid">LOGIN</button>
+                    <div class="signup_text text-center">
+                        <span style="color:#b03331;font-weight: bold;cursor: pointer;" [routerLink]="['/app/sign-up']">Sign Up</span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

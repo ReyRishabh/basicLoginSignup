@@ -1,0 +1,62 @@
+<div class="container-fluid backgroundImage">
+    <div class="set_width">
+      <div align="center">
+        <img class="app-logo-image" src="assets/assignment.jpg">
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h4 class="form_header">Sign Up</h4>
+          <span class="underline"></span>
+          <form class="marginTop" [formGroup]="SignUp" (ngSubmit)="onSubmit(SignUp.value)">
+            <div>
+              <mat-form-field>
+                <mat-label>Name</mat-label>
+                <input matInput formControlName="name" type="text">
+                <mat-error
+                  *ngIf="SignUp.controls['name'].errors?.minlength && !SignUp.controls['name'].pristine">
+                  Atleast three character required
+                </mat-error>
+                <mat-error
+                  *ngIf="SignUp.controls['name'].errors?.required && !SignUp.controls['name'].pristine">
+                  Name is required
+                </mat-error>
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Email Address</mat-label>
+                <input matInput formControlName="email" type="email" autocomplete="address">
+                <mat-error *ngIf="SignUp.controls['email'].errors?.invalid && !SignUp.controls['email'].pristine">
+                  Email is not valid
+                </mat-error>
+                <mat-error *ngIf="SignUp.controls['email'].errors?.required && !SignUp.controls['email'].pristine">
+                  Email is required
+                </mat-error>
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Password</mat-label>
+                <input matInput type="password" [type]="hide ? 'password' : 'text'" formControlName="password">
+                <button mat-button type="button" matSuffix mat-icon-button aria-label="View" (click)="hide = !hide">
+                  <mat-icon class="visibility" style="margin-block-start: auto">{{hide ? 'visibility_off' : 'visibility'}}
+                  </mat-icon>
+                </button>
+                <mat-error *ngIf="SignUp.controls['password'].errors?.required && SignUp.controls['password'].touched">
+                  Password is required
+                </mat-error>
+                <mat-error *ngIf="SignUp.controls['password'].errors?.pattern && SignUp.controls['password'].touched">
+                  Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one
+                  special character
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <button type="submit" class="custom-button marginTop"
+              [ngStyle]="{'cursor':SignUp.valid ? 'pointer': 'not-allowed'}" [disabled]="!SignUp.valid">Register</button>
+            <div class="signup_text text-center">
+              <span style="color:#b03331; cursor: pointer;" [routerLink]="['/app/sign-in']">Back</span>
+            </div>
+  
+          </form>
+  
+        </div>
+      </div>
+    </div>
+  
+  </div>
