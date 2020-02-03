@@ -1,0 +1,17 @@
+h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logout{
+    position: absolute;
+    right: 0;
+    height: 40px;
+    width: auto;
+    min-width: 120px;
+    border-radius: 5px;
+    font-size: 24px;
+    color: white;
+    background-color: #008000ad;
+    float: right;
+}

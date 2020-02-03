@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { BaThemeSpinner } from './utilities/services/baThemeSpinner.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'assignment';
+  constructor(private loader: BaThemeSpinner){
+
+  }
+  ngAfterViewInit(){
+    // this.loader.hide();
+  }
 }
